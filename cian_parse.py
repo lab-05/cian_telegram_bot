@@ -11,6 +11,7 @@ import dataset
 import datetime
 import browser_cookie3
 
+#get cookies from installed on the pc firefox browser
 cookiejar = browser_cookie3.firefox(domain_name='cian.ru')
 
 
@@ -24,9 +25,9 @@ def get_url(urlfile):
 url = get_url(urlfile)
 
 db = dataset.connect('sqlite:///cian.db')
-table = db.get_table('koptevo')
+table = db.get_table('cian_result')
 
-
+#user-agent: the version of firefox installed on the PC
 user_agent = {'User-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0'}
 
 def getrequest(url):
